@@ -11,11 +11,14 @@ datasource db {
     relationMode = "prisma"
 }
 
-model Post {
-    id        Int      @id @default(autoincrement())
-    name      String
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+model Bus {
+    id Int @id @default(autoincrement())
+    origin String
+    destination String
+    seats Int
+}
 
-    @@index([name])
+model BookedSeats {
+    id Int @id @default(autoincrement())
+    number Int 
 }
